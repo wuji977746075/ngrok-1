@@ -210,7 +210,7 @@ case "$num" in
 		read domain
 		echo "启动端口"
 		read port
-		/usr/local/ngrok/bin/ngrokd -domain=$domain -httpAddr=":$port"
+		nohup /usr/local/ngrok/bin/ngrokd -domain=$domain -httpAddr=":$port" > /home/rainbow/ngrok.out 2>&1 &
 	;;
 	[9] )
 		echo "输入启动域名"
